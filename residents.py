@@ -27,3 +27,25 @@ class Residents:
 		self.age = self.age + self.add_year
 
 
+class Worker(Residents):
+	def __init__(self, first, last, age, hobby, personal_guidence=None):
+		super().__init__(first, last, age, hobby)
+		if personal_guidence is None:
+			self.personal_guidence = []
+		else:
+			self.personal_guidence = personal_guidence
+
+	def add_res(self, res):
+		if res not in self.personal_guidence:
+			self.personal_guidence.append(res.full_name)
+
+	def remove_res(self, res):
+		if res in self.personal_guidence:
+			self.personal_guidence.remove(res.full_name)
+
+
+
+
+
+
+
